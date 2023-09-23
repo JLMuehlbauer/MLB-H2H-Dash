@@ -8,11 +8,13 @@ This script creates a locally hosted HTML dashboard that displays a handful of p
 
 ## How:
 This script uses the Python libraries "Dash" and "Plotly" to create the HTML dashboard. The dashboard has 4 user adjustable components which include 2 Dropdown menus to select the desired teams and 2 Input menus to select the desired years (see image below)
-![image](https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/e2eaafaa-4ec2-49cf-b3bd-3ae67478eea8)
+<img width="1433" alt="Screenshot 2023-09-23 at 4 53 29 PM" src="https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/2dd2db2f-8713-4bfc-8a3f-508984ae0714">
+
 
 The script takes the user inputs and calls a function that utilizes the "BeautifulSoup" library to scrape data from baseball-reference team/year pages. This data is formatted into a "Pandas" dataframe that is then used to update the HTML figure. The image below shows the data between the 2023 LA Dodgers and the 2023 Atlanta Braves.
 
-![image](https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/b651d6b4-ddcb-471c-b242-7c9480ab8e31)
+![newplot (4)](https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/37658636-c5cf-4ae3-aed2-40d733369f29)
+
 
 
 ## Running on Your Machine:
@@ -28,7 +30,7 @@ The script takes the user inputs and calls a function that utilizes the "Beautif
 - The bubble plots may be an odd choice, but I think with some practice the user can identify many key insights on how well the team is performing and which individuals are giving the most production. This is especially true with the hovertext info and the interactiveness of the plotly plots. Here is an example of of an interepretation one can make:
 
 ### Interpretation:
-![image](https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/b1c2eca6-df1a-4e87-991c-f0eb0fd3ca2d)
+<img width="593" alt="Screenshot 2023-09-23 at 5 25 27 PM" src="https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/7d7fc22c-4940-4b38-aecb-9e6de0d0122f">
 
 - The Braves have counted on steady and robust performances by 3 starting pitchers (seen by the 3 large blue bubbles in the high 3 ERAs). These pitchers are pitching many innings to a low ERA. On the flip side, the Dodgers starting picthers have struggled with staying on the field (seen by the smaller diameter bubbles) and many of them have had weak performances (seen the blue bubbles at higher ERAs and WHIPs).
 - The Dodgers have made up for the shortfall in their starting pitchers with half a dozen relief pitchers (and possibly non-listed starters). These pitchers have given many innings with and ERA around 3 or lower. The Braves have not had very reliable relief pitchers, many of them are performing about as well as their starters.
