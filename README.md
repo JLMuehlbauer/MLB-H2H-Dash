@@ -1,4 +1,4 @@
-# baseball-H2H-Dash ⚾
+# MLB-H2H-Dash ⚾
 --- 
 ## Background:
 As an avid baseball fan and someone who's been very interested in data visualization, I've wanted to merge these passions. 
