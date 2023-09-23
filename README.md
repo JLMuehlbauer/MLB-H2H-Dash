@@ -15,6 +15,12 @@ The script takes the user inputs and calls a function that utilizes the "Beautif
 ![image](https://github.com/JLMuehlbauer/MLB-H2H-Dash/assets/115378901/b651d6b4-ddcb-471c-b242-7c9480ab8e31)
 
 
+## Running on Your Machine:
+1. Download this repo to your machine.
+2. Make sure that you have Anaconda or Miniconda installed on your machine
+3. Use the .yaml file to create a virtual environment that has the required packages. This can be done by using the "Import" function in the "Environments" tab in the Anaconda Navigator. *Note: This has many extraneous packages that are not needed for this script. Feel free to individually install these packages.*
+4. Make sure to activate the environment before running this script, this can be done using the anaconda prompt and running the script straight from the prompt.
+5. Run the script and wait. It should open in the Web browser, otherwise copy and paste "http://localhost:8050/" into your browser. 
 
 ## Notes:
 - This script updates very slowly. This is most likely a result of the slow webscraping step. The sports-reference API would be a much cleaner method of grabbing data for this dashboard, however, during testing I was not able to get this module to work. It's possible that it is out of date, so instead, I opted for the scraping method which also gave me the opportunity to learn.
