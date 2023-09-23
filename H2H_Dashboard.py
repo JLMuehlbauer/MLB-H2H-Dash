@@ -55,7 +55,7 @@ def get_players_on_team(team, year, player_type):
     
     if player_type == "batting":
         df['PA'] = df['PA'].apply(pd.to_numeric, errors='coerce')
-        df = df.query('PA > 10').copy()
+        df = df.query('PA > 30').copy()
     elif player_type == "pitching":
         df['IP'] = df['IP'].apply(pd.to_numeric, errors='coerce')
         df = df.query('IP > 10').copy()
@@ -196,18 +196,17 @@ def update_scatter_plot(team1, team1year, team2, team2year):
     )
     
     # Runs Scored
-    teams = list(bat['team_yr'].unique())
-    tot_runs = [bat.loc[bat['team_yr'] == teams[0], 'R'].sum(), bat.loc[bat['team_yr'] == teams[1], 'R'].sum()]
-    
     fig.add_trace(
         go.Bar(
-               x = teams,
-               y = tot_runs,
+               x = bat['team_yr'],
+               y = bat['R'],
                marker = dict(color = 'blue'),
+               hovertext = bat_hover,
                name = 'Runs Scored'
     ),
     row=1, col=4
     )
+
 
     # ERA
     fig.add_trace(
@@ -314,21 +313,29 @@ def update_scatter_plot(team1, team1year, team2, team2year):
         row=2, col=3
     )
     
-    # Runs Allowed
-    teams = list(pitch['team_yr'].unique())
-    tot_runs_allowed = [pitch.loc[pitch['team_yr'] == teams[0], 'R'].sum(), pitch.loc[pitch['team_yr'] == teams[1], 'R'].sum()]
-    
+    # Runs Scored
     fig.add_trace(
         go.Bar(
-               x = teams,
-               y = tot_runs_allowed,
+               x = SP['team_yr'],
+               y = SP['R'],
                marker = dict(color = 'blue'),
-               name = 'Runs Allowed'
+               hovertext = SP_hover,
+               name = 'SP Runs Allowed'
+    ),
+    row=2, col=4
+    )
+    fig.add_trace(
+        go.Bar(
+               x = RP['team_yr'],
+               y = RP['R'],
+               marker = dict(color = 'red'),
+               hovertext = RP_hover,
+               name = 'RP Runs Allowed'
     ),
     row=2, col=4
     )
     
-    
+    teams = bat['team_yr'].unique()
     
     fig.update_layout(height=900, title_text= f'{teams[0]} vs. {teams[1]}')
     
